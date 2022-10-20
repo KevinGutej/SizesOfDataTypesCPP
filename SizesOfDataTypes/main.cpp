@@ -22,6 +22,16 @@ void checkSizeOfArray()
         cin >> chosenDataTypeOfArray;
         cout << "What size would you like your array to be: ";
         cin >> sizeOfArray;
+        if(sizeOfArray == 1)
+        {
+            cout << "Try using this command in the variable section" << endl;
+            return;
+        }
+        if(sizeOfArray < 0)
+        {
+            cout << "An array can't have a negative size" << endl;
+            continue;
+        }
         if(chosenDataTypeOfArray == "int")
         {
             cout << sizeof(int) * sizeOfArray;
@@ -37,12 +47,10 @@ void checkSizeOfArray()
         else if(chosenDataTypeOfArray == "char")
         {
             cout << sizeof(char)  * sizeOfArray;
-            buffer = " Byte";
         }
         else if(chosenDataTypeOfArray == "bool")
         {
             cout << sizeof(bool)  * sizeOfArray;
-            buffer = " Byte";
         }
         else if(chosenDataTypeOfArray == "long")
         {
@@ -143,24 +151,28 @@ void menu()
     cout << "[1] - Variable" << endl;
     cout << "[2] - Array" << endl;
     cout << "[3] - Pointer" << endl;
+    cout << "[0] - Exit" << endl;
 }
 
 int main()
 {
-    int k;
-    menu();
-    cout << "Please choose a option" << endl;
-    cin >> k;
-    switch(k)
+    int k{100};
+    while(k != 0)
     {
-    case 1:
-        checkSizeOf();
-        break;
-    case 2:
-        checkSizeOfArray();
-        break;
-    case 3:
-        break;
+        menu();
+        cout << "Please choose a option" << endl;
+        cin >> k;
+        switch(k)
+        {
+        case 1:
+            checkSizeOf();
+            break;
+        case 2:
+            checkSizeOfArray();
+            break;
+        case 3:
+            break;
     }
+}
     return 0;
 }
