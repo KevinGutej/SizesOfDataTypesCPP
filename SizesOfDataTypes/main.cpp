@@ -3,14 +3,86 @@
 using namespace std;
 
 
+void checkSizeOfArray()
+{
+    string chosenDataTypeOfArray;
+    int sizeOfArray;
+    string buffer = " Bytes";
+    bool finish = true;
+
+
+    for(int i=0; i < 3; i++)
+    {
+        buffer = " Bytes";
+        finish = true;
+        bool finish = true;
+
+        cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
+        cout << "What data Type of Array would you like to find the size of: ";
+        cin >> chosenDataTypeOfArray;
+        cout << "What size would you like your array to be: ";
+        cin >> sizeOfArray;
+        if(chosenDataTypeOfArray == "int")
+        {
+            cout << sizeof(int) * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "string")
+        {
+            cout << sizeof(string)  * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "float")
+        {
+            cout << sizeof(float)  * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "char")
+        {
+            cout << sizeof(char)  * sizeOfArray;
+            buffer = " Byte";
+        }
+        else if(chosenDataTypeOfArray == "bool")
+        {
+            cout << sizeof(bool)  * sizeOfArray;
+            buffer = " Byte";
+        }
+        else if(chosenDataTypeOfArray == "long")
+        {
+            cout << sizeof(long)  * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "short")
+        {
+            cout << sizeof(short)  * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "unsigned int")
+        {
+            cout << sizeof(unsigned int)  * sizeOfArray;
+        }
+        else if(chosenDataTypeOfArray == "double")
+        {
+            cout << sizeof(double)  * sizeOfArray;
+        }
+        else
+        {
+            cout << "Your option is incorrect, Please try again: ";
+                finish = false;
+                buffer = "";
+        }
+        cout << buffer << endl;
+        if(finish == true)break;
+
+    }
+}
+
+
 void checkSizeOf()
 {
     string chosenDataType;
     string buffer = " Bytes";
     bool finish = true;
+
     for(int i=0; i < 3; i++)
     {
     buffer = " Bytes";
+    finish = true;
     cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
     cout << "What data Type would you like to find the size of: ";
     cin >> chosenDataType;
@@ -85,6 +157,7 @@ int main()
         checkSizeOf();
         break;
     case 2:
+        checkSizeOfArray();
         break;
     case 3:
         break;
