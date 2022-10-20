@@ -1,6 +1,28 @@
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
+
+
+void clearConsole()
+{
+    system("cls");
+}
+
+void pause()
+{
+    system("pause");
+}
+
+
+void sizeOfPointer()
+{
+    clearConsole();
+
+    int number = 5;
+    int* pointer = &number;
+    cout << "Not matter what you chosen, it will always be the same " << sizeof(pointer) << " Bytes." <<  endl;
+}
 
 
 void checkSizeOfArray()
@@ -9,13 +31,17 @@ void checkSizeOfArray()
     int sizeOfArray;
     string buffer = " Bytes";
     bool finish = true;
-
+    clearConsole();
 
     for(int i=0; i < 3; i++)
     {
+        pause();
+        clearConsole();
+
         buffer = " Bytes";
         finish = true;
         bool finish = true;
+
 
         cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
         cout << "What data Type of Array would you like to find the size of: ";
@@ -83,12 +109,16 @@ void checkSizeOfArray()
 
 void checkSizeOf()
 {
+    clearConsole();
+
     string chosenDataType;
     string buffer = " Bytes";
     bool finish = true;
 
     for(int i=0; i < 3; i++)
     {
+    pause();
+    clearConsole();
     buffer = " Bytes";
     finish = true;
     cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
@@ -171,6 +201,7 @@ int main()
             checkSizeOfArray();
             break;
         case 3:
+            sizeOfPointer();
             break;
     }
 }
