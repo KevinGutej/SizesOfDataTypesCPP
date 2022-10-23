@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 
+
 using namespace std;
 
 
@@ -9,9 +10,16 @@ void clearConsole()
     system("cls");
 }
 
+
 void pause()
 {
     system("pause");
+}
+
+
+void space()
+{
+    cout << endl;
 }
 
 
@@ -30,17 +38,15 @@ void checkSizeOfArray()
     string chosenDataTypeOfArray;
     int sizeOfArray;
     string buffer = " Bytes";
-    bool finish = true;
     clearConsole();
 
     for(int i=0; i < 3; i++)
     {
         pause();
         clearConsole();
-
         buffer = " Bytes";
-        finish = true;
         bool finish = true;
+
 
 
         cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
@@ -121,7 +127,8 @@ void checkSizeOf()
     clearConsole();
     buffer = " Bytes";
     finish = true;
-    cout << "Options {int, string , float, char, bool, long, short, unsigned int, double}" << endl;
+    cout << "Data Type Options: int, string , float, char, bool, long, short, unsigned int, double" << endl;
+    space();
     cout << "What data Type would you like to find the size of: ";
     cin >> chosenDataType;
     if(chosenDataType == "int")
@@ -175,14 +182,16 @@ void checkSizeOf()
 }
 
 
-
 void menu()
 {
+    space();
     cout << "[1] - Variable" << endl;
     cout << "[2] - Array" << endl;
     cout << "[3] - Pointer" << endl;
     cout << "[0] - Exit" << endl;
+    space();
 }
+
 
 int main()
 {
@@ -190,7 +199,8 @@ int main()
     while(k != 0)
     {
         menu();
-        cout << "Please choose a option" << endl;
+        cout << endl;
+        cout << "[System] - Please choose a option: ";
         cin >> k;
         switch(k)
         {
@@ -203,7 +213,7 @@ int main()
         case 3:
             sizeOfPointer();
             break;
+        }
     }
-}
     return 0;
 }
